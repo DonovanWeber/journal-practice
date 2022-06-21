@@ -18,9 +18,34 @@ Entry.prototype.countLetters = function (){
       newArrayOfLetters.push(letter);
     }
   }
-  return newArrayOfLetters.length;
+  return newArrayOfLetters;
 };
 
+Entry.prototype.countVowels = function (){
+  let array = this.countLetters();
+  let newArrayOfVowels = [];
+  let newArrayOfConsonants = [];
+  array.forEach(function(letter){
+    if(/[aeiouAEIOU]/.test(letter)){
+      newArrayOfVowels.push(letter);
+    }else{
+      newArrayOfConsonants.push(letter);
+    }
+  });
+  this.vowels = newArrayOfVowels.length;
+  this.consonants = newArrayOfConsonants.length;
+};
+
+Entry.prototype.countConsonants = function (){
+  let array = this.countLetters();
+  let newArrayOfConsonants = [];
+  array.forEach(function(letter){
+    if(!/[aeiouAEIOU]/.test(letter)){
+      newArrayOfConsonants.push(letter);
+    }
+  });
+  console.log(newArrayOfConsonants);
+};
 // function isLetter(str) {
 //   return str.length >= 1 && str.match(/[a-z]/i);
 // }

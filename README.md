@@ -45,6 +45,25 @@ Test:"It will count all letters inside of the array"
 Code:let arrayOfLetters = this.body.trim().split("");
 countLetters("Dear Diary", "I'm an idiot")
 Expected Output: 9
+
+Describe: countVowels()
+
+Test:"It will count all the vowels and consonants in a string."
+Code:let array = this.countVowels();
+  let array = this.countLetters();
+  let newArrayOfVowels = [];
+  let newArrayOfConsonants = [];
+  array.forEach(function(letter){
+    if(/[aeiouAEIOU]/.test(letter)){
+      newArrayOfVowels.push(letter);
+    }else{
+      newArrayOfConsonants.push(letter);
+    }
+  });
+  this.vowels = newArrayOfVowels.length;
+  this.consonants = newArrayOfConsonants.length;
+};
+Expected Output: 5 and 4
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
