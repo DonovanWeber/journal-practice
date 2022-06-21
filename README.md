@@ -39,6 +39,12 @@ newEntry = new Entry("Dear Diary","I'm an idiot")
 newEntry.countWords();
 Output: 3
 
+Describe: countLetters();
+
+Test:"It will count all letters inside of the array"
+Code:let arrayOfLetters = this.body.trim().split("");
+countLetters("Dear Diary", "I'm an idiot")
+Expected Output: 9
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
