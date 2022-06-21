@@ -4,5 +4,6 @@ export function Entry(title, body){
 }
 
 Entry.prototype.countWords = function (){
-  
+  let wordArray = this.body.split(" ");
+  console.log(wordArray.length);
 };

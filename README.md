@@ -33,6 +33,12 @@ Code:
 newEntry = new Entry("Dear Diary","I'm an idiot")
 Output: newEntry.title = "Dear Diary" newEntry.body = "I'm an idiot"
 
+Test: "An entry object's body will have it's words counted."
+Code:
+newEntry = new Entry("Dear Diary","I'm an idiot")
+newEntry.countWords();
+Output: 3
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
