@@ -2,7 +2,6 @@ export function Entry(title, body){
   this.title = title;
   this.body = body;
 }
-let newEntry = new Entry("Dear Diary", "I'm an idiot Blah Blah Blah Seven Eight Nine.");
 
 Entry.prototype.countWords = function (){
   let wordArray = this.body.split(" ");
@@ -39,16 +38,15 @@ Entry.prototype.countVowels = function (){
 Entry.prototype.getTeaser = function(){
   let arrayOfSentence = this.countWords();
   let arrayOfTeaser = [];
-  console.log(arrayOfSentence);
   for(let i = 0; i < 8; i++) {
     if(arrayOfSentence[i].indexOf(".") > -1) {
       arrayOfTeaser.push(arrayOfSentence[i]);
-      return arrayOfTeaser;
+      return arrayOfTeaser.join(" ");
     } else {
       arrayOfTeaser.push(arrayOfSentence[i]);
     }
   }
-  console.log(arrayOfTeaser);
+  return arrayOfTeaser.join(" ");
 };
 
 // Entry.prototype.countConsonants = function (){
