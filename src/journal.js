@@ -2,11 +2,11 @@ export function Entry(title, body){
   this.title = title;
   this.body = body;
 }
-let newEntry = new Entry("Dear Diary", "I'm an idiot");
+let newEntry = new Entry("Dear Diary", "I'm an idiot Blah Blah Blah Seven Eight Nine.");
 
 Entry.prototype.countWords = function (){
   let wordArray = this.body.split(" ");
-  console.log(wordArray.length);
+  return wordArray;
 };
 
 Entry.prototype.countLetters = function (){
@@ -36,16 +36,31 @@ Entry.prototype.countVowels = function (){
   this.consonants = newArrayOfConsonants.length;
 };
 
-Entry.prototype.countConsonants = function (){
-  let array = this.countLetters();
-  let newArrayOfConsonants = [];
-  array.forEach(function(letter){
-    if(!/[aeiouAEIOU]/.test(letter)){
-      newArrayOfConsonants.push(letter);
+Entry.prototype.getTeaser = function(){
+  let arrayOfSentence = this.countWords();
+  let arrayOfTeaser = [];
+  console.log(arrayOfSentence);
+  for(let i = 0; i < 8; i++) {
+    if(arrayOfSentence[i].indexOf(".") > -1) {
+      arrayOfTeaser.push(arrayOfSentence[i]);
+      return arrayOfTeaser;
+    } else {
+      arrayOfTeaser.push(arrayOfSentence[i]);
     }
-  });
-  console.log(newArrayOfConsonants);
+  }
+  console.log(arrayOfTeaser);
 };
+
+// Entry.prototype.countConsonants = function (){
+//   let array = this.countLetters();
+//   let newArrayOfConsonants = [];
+//   array.forEach(function(letter){
+//     if(!/[aeiouAEIOU]/.test(letter)){
+//       newArrayOfConsonants.push(letter);
+//     }
+//   });
+//   console.log(newArrayOfConsonants);
+// };
 // function isLetter(str) {
 //   return str.length >= 1 && str.match(/[a-z]/i);
 // }

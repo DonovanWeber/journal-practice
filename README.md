@@ -64,6 +64,23 @@ Code:let array = this.countVowels();
   this.consonants = newArrayOfConsonants.length;
 };
 Expected Output: 5 and 4
+
+Describe getTeaser();
+
+Test: "It will return an array stopping at the first "." period or at the max of 8 words"
+Code:let arrayOfSentence = this.countWords();
+  let arrayOfTeaser = [];
+  console.log(arrayOfSentence);
+  for(let i = 0; i < 8; i++) {
+    if(arrayOfSentence[i].indexOf(".") > -1) {
+      arrayOfTeaser.push(arrayOfSentence[i]);
+      return arrayOfTeaser;
+    } else {
+      arrayOfTeaser.push(arrayOfSentence[i]);
+    }
+  }
+  getTeaser("I'm an idiot. blah blah.")
+Expected Output:["I'm", "an", "idiot."]
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
